@@ -2,7 +2,28 @@
     margin: 0;
 }
 
-.fakeimg {
-    height: 200px;
+html{
+    background-color: lightblue;
+}
+
+.fakeimg1 {
+    margin-bottom: 150px;
+    height: 150px;
     background: #aaa;
+}
+
+.fakeimg2{
+    height: 70px;
+    width: 200px;
+    margin-bottom: 200px;
+}
+
+.fakeimg3{
+    height: 300px;
+    width: 450px;
+    margin-bottom: 150px;
+}
+jumbotron {
+    height: 50px;
+
 }
