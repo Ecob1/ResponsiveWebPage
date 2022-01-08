@@ -1,29 +1,69 @@
 .navbar {
     margin: 0;
+    color: #fff;
 }
 
-html{
-    background-color: lightblue;
+.bg-dark {
+    background: transparent !important;
 }
 
 .fakeimg1 {
-    margin-bottom: 150px;
+    margin-bottom: 170px;
     height: 150px;
     background: #aaa;
 }
 
-.fakeimg2{
-    height: 70px;
-    width: 200px;
-    margin-bottom: 200px;
+.d-block1 {
+    height: 300px;
+    width: 450px;
 }
 
-.fakeimg3{
+.d-block {
+    height: 300px;
+    width: 280px;
+}
+
+.d-block3 {
+    padding: 30px;
+    height: 300px;
+    width: 280px;
+}
+
+.fakeimg2 {
+    height: 70px;
+    width: 200px;
+    margin-bottom: 250px;
+}
+
+.fakeimg3 {
     height: 300px;
     width: 450px;
     margin-bottom: 150px;
 }
-jumbotron {
-    height: 50px;
 
+/* .jumbotron{
+    padding: 0px;
+    margin: 0px;;
+} */
+
+
+
+.carousel-item h3{
+    float: left;
+    margin-left:0px;
+    padding: 0px;
+}
+
+.carouselExampleControls p{
+    margin-top: 10px;
+}
+
+.nav-items{
+    padding: 10px;
+    grid-area: 20px;
+}
+
+.main-form{
+    width: 450px;
+    margin: auto;
 }

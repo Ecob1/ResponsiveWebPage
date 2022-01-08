@@ -5,72 +5,73 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="registration.css">
+  <link rel="stylesheet" type="text/css" href="bootstrap.css">
   <link rel="stylesheet" type="submitionJS" href="submitionJS.js">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <title>Document</title>
 </head>
 
 <body>
-  <form class="row g-3 needs-validation" novalidate>
+
+  <form class="row g-3">
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">First name</label>
-      <input type="text" class="form-control" id="validationCustom01" value="Mark" required>
+      <label for="validationServer01" class="form-label">First name</label>
+      <input type="text" class="form-control is-valid" id="validationServer01" value="Mark" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-4">
-      <label for="validationCustom02" class="form-label">Last name</label>
-      <input type="text" class="form-control" id="validationCustom02" value="Otto" required>
+      <label for="validationServer02" class="form-label">Last name</label>
+      <input type="text" class="form-control is-valid" id="validationServer02" value="Otto" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Username</label>
+      <label for="validationServerUsername" class="form-label">Username</label>
       <div class="input-group has-validation">
-        <span class="input-group-text" id="inputGroupPrepend">@</span>
-        <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-        <div class="invalid-feedback">
+        <span class="input-group-text" id="inputGroupPrepend3">@</span>
+        <input type="text" class="form-control is-invalid" id="validationServerUsername" aria-describedby="inputGroupPrepend3 validationServerUsernameFeedback" required>
+        <div id="validationServerUsernameFeedback" class="invalid-feedback">
           Please choose a username.
         </div>
       </div>
     </div>
     <div class="col-md-6">
-      <label for="validationCustom03" class="form-label">City</label>
-      <input type="text" class="form-control" id="validationCustom03" required>
-      <div class="invalid-feedback">
+      <label for="validationServer03" class="form-label">City</label>
+      <input type="text" class="form-control is-invalid" id="validationServer03" aria-describedby="validationServer03Feedback" required>
+      <div id="validationServer03Feedback" class="invalid-feedback">
         Please provide a valid city.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom04" class="form-label">State</label>
-      <select class="form-select" id="validationCustom04" required>
+      <label for="validationServer04" class="form-label">State</label>
+      <select class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
         <option selected disabled value="">Choose...</option>
         <option>...</option>
       </select>
-      <div class="invalid-feedback">
+      <div id="validationServer04Feedback" class="invalid-feedback">
         Please select a valid state.
       </div>
     </div>
     <div class="col-md-3">
-      <label for="validationCustom05" class="form-label">Zip</label>
-      <input type="text" class="form-control" id="validationCustom05" required>
-      <div class="invalid-feedback">
+      <label for="validationServer05" class="form-label">Zip</label>
+      <input type="text" class="form-control is-invalid" id="validationServer05" aria-describedby="validationServer05Feedback" required>
+      <div id="validationServer05Feedback" class="invalid-feedback">
         Please provide a valid zip.
       </div>
     </div>
     <div class="col-12">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-        <label class="form-check-label" for="invalidCheck">
+        <input class="form-check-input is-invalid" type="checkbox" value="" id="invalidCheck3" aria-describedby="invalidCheck3Feedback" required>
+        <label class="form-check-label" for="invalidCheck3">
           Agree to terms and conditions
         </label>
-        <div class="invalid-feedback">
+        <div id="invalidCheck3Feedback" class="invalid-feedback">
           You must agree before submitting.
         </div>
       </div>
@@ -80,12 +81,88 @@
     </div>
   </form>
 
+  <script>
+    (function () {
+      'use strict'
+    
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      var forms = document.querySelectorAll('.needs-validation')
+    
+      // Loop over them and prevent submission
+      Array.prototype.slice.call(forms)
+        .forEach(function (form) {
+          form.addEventListener('submit', function (event) {
+            if (!form.checkValidity()) {
+              event.preventDefault()
+              event.stopPropagation()
+            }
+    
+            form.classList.add('was-validated')
+          }, false)
+        })
+    })()
+  </script>
+  <!-- <form action="" class="main-form needs-validation" novalidate>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="firstname">Firstname</label>
+          <input type="text" name="firstname" id="firstname" class="form-control is-invalid">
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="form-group">
+          <label for="lastname">Lastname</label>
+          <input type="text" name="lastname" id="lastname" class="form-control">
+        </div>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="username">username</label>
+      <input type="text" name="username" id="username" class="form-control" required>
+      <div class="invalid-feedback">Please enter a valid username.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">password</label>
+      <input type="password" name="password" id="password" class="form-control">
+    </div>
+    <div class="form-group">
+      <label for="gender">Gender</label>
+      <select name="gender" id="gender" class="form-control">
+        <option value="make">Male</option>
+        <option value="Female">Female</option>
+      </select>
+    </div>
+
+    <div class="form-check">
+      <input type="checkbox" id="accept-terms" class="form-check-input">
+      <label for="accept-term" class="form-check-lable">Accept Term & Conditions</label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+  <script>
+    var form = document.querySelector('.needs-validation');
+
+    form.addEventListener('submit', function(event) {
+      if (form.checkValidity() === false) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+      form.classList.add('was-validated');
+    })
+  </script> -->
+
+
 </body>
 
 </html>
 
 <!-- <link rel="stylesheet" type="text/css" href="registration.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></scrip>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
